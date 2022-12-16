@@ -86,7 +86,7 @@ function encode(str){
 function decode(str) {
 	let base64str = "";
 	let decodedText = "";
-	let temp=str.replace(/\r?\n/g, "").split(splitChar);
+	let temp=str.replace(/\r?\n/g, "").replace(/\r? /g, "").split(splitChar);
 	for(let i=0;i<temp.length;i++){
 		let index = unko64Words.indexOf(temp[i]);
 		if(index==-1){
