@@ -82,18 +82,22 @@ function encode(str) {
 }
 
 function decode(str) {
-  let base64str = "";
-  let decodedText = "";
-  let temp = str.replace(/\r?\n/g, "").replace(/\r? /g, "").split(splitChar);
-  for (let i = 0; i < temp.length; i++) {
-    let index = unko64Words.indexOf(temp[i]);
-    if (index == -1) {
-      return "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.";
+  try {
+    let base64str = "";
+    let decodedText = "";
+    let temp = str.replace(/\r?\n/g, "").replace(/\r? /g, "").split(splitChar);
+    for (let i = 0; i < temp.length; i++) {
+      let index = unko64Words.indexOf(temp[i]);
+      if (index == -1) {
+        return "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.";
+      }
+      base64str += base64Strings[index];
     }
-    base64str += base64Strings[index];
+    decodedText = decodeURIComponent(atob(base64str));
+    return decodedText;
+  } catch (e) {
+    return "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.";
   }
-  decodedText = decodeURIComponent(atob(base64str));
-  return decodedText;
 }
 
 window.onload = function () {
