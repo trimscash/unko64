@@ -89,14 +89,20 @@ function decode(str) {
     for (let i = 0; i < temp.length; i++) {
       let index = unko64Words.indexOf(temp[i]);
       if (index == -1) {
-        return "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.";
+        return {
+          isError: true,
+          data: "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.",
+        };
       }
       base64str += base64Strings[index];
     }
     decodedText = decodeURIComponent(atob(base64str));
-    return decodedText;
+    return { isError: false, data: decodedText };
   } catch (e) {
-    return "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.";
+    return {
+      isError: true,
+      data: "unko64エラー.うまく排泄できません.うんこが途切れている可能性があります.",
+    };
   }
 }
 
@@ -104,19 +110,28 @@ window.onload = function () {
   let encodeButton = document.getElementById("encodeButton");
   encodeButton.addEventListener("click", () => {
     let beforeEncodeText = document.getElementById("beforeEncodeText").value;
-    let encodedText = "";
-    encodedText = encode(beforeEncodeText);
     let afterEncodeForm = document.getElementById("afterEncodeText");
+    let encodedText = "";
+
+    encodedText = encode(beforeEncodeText);
     afterEncodeForm.value = encodedText;
   });
 
   let decodeButton = document.getElementById("decodeButton");
   decodeButton.addEventListener("click", () => {
     let beforeDecodeText = document.getElementById("beforeDecodeText").value;
-    let decodedText = "";
-    decodedText = decode(beforeDecodeText);
     let afterDecodeForm = document.getElementById("afterDecodeText");
-    afterDecodeForm.value = decodedText;
+    let decoded = "";
+
+    decoded = decode(beforeDecodeText);
+
+    if (decoded.isError) {
+      afterDecodeForm.style.color = "red";
+    } else {
+      afterDecodeForm.style.color = "black";
+    }
+
+    afterDecodeForm.value = decoded.data;
   });
 };
 
