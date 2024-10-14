@@ -105,9 +105,7 @@ window.onload = function () {
   encodeButton.addEventListener("click", () => {
     let beforeEncodeText = document.getElementById("beforeEncodeText").value;
     let encodedText = "";
-    console.log(beforeEncodeText);
     encodedText = encode(beforeEncodeText);
-    console.log(encodedText);
     let afterEncodeForm = document.getElementById("afterEncodeText");
     afterEncodeForm.value = encodedText;
   });
@@ -116,9 +114,7 @@ window.onload = function () {
   decodeButton.addEventListener("click", () => {
     let beforeDecodeText = document.getElementById("beforeDecodeText").value;
     let decodedText = "";
-    console.log(beforeDecodeText);
     decodedText = decode(beforeDecodeText);
-    console.log(decodedText);
     let afterDecodeForm = document.getElementById("afterDecodeText");
     afterDecodeForm.value = decodedText;
   });
