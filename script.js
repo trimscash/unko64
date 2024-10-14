@@ -71,14 +71,21 @@ let unko64Words = [
 let splitChar = "と";
 
 function encode(str) {
-  let base64str = btoa(encodeURIComponent(str));
-  let encodedText = "";
-  [].forEach.call(base64str, (e) => {
-    encodedText += unko64Words[base64Strings.indexOf(e)];
-    encodedText += splitChar;
-  });
-  encodedText = encodedText.slice(0, encodedText.length - 1);
-  return encodedText;
+  try {
+    let base64str = btoa(encodeURIComponent(str));
+    let encodedText = "";
+    [].forEach.call(base64str, (e) => {
+      encodedText += unko64Words[base64Strings.indexOf(e)];
+      encodedText += splitChar;
+    });
+    encodedText = encodedText.slice(0, encodedText.length - 1);
+    return { isError: false, data: encodedText };
+  } catch (e) {
+    return {
+      isError: true,
+      data: "unko64エラー.うまく排泄できません.変なものを食べた可能性があります.",
+    };
+  }
 }
 
 function decode(str) {
@@ -114,6 +121,13 @@ window.onload = function () {
     let encodedText = "";
 
     encodedText = encode(beforeEncodeText);
+
+    if (encodedText.isError) {
+      afterEncodeForm.style.color = "red";
+    } else {
+      afterEncodeForm.style.color = "black";
+    }
+
     afterEncodeForm.value = encodedText;
   });
 
