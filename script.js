@@ -118,26 +118,22 @@ window.onload = function () {
   encodeButton.addEventListener("click", () => {
     let beforeEncodeText = document.getElementById("beforeEncodeText").value;
     let afterEncodeForm = document.getElementById("afterEncodeText");
-    let encodedText = "";
+    let encoded = encode(beforeEncodeText);
 
-    encodedText = encode(beforeEncodeText);
-
-    if (encodedText.isError) {
+    if (encoded.isError) {
       afterEncodeForm.style.color = "red";
     } else {
       afterEncodeForm.style.color = "black";
     }
 
-    afterEncodeForm.value = encodedText;
+    afterEncodeForm.value = encoded.data;
   });
 
   let decodeButton = document.getElementById("decodeButton");
   decodeButton.addEventListener("click", () => {
     let beforeDecodeText = document.getElementById("beforeDecodeText").value;
     let afterDecodeForm = document.getElementById("afterDecodeText");
-    let decoded = "";
-
-    decoded = decode(beforeDecodeText);
+    let decoded = decode(beforeDecodeText);
 
     if (decoded.isError) {
       afterDecodeForm.style.color = "red";
