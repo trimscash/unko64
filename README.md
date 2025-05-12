@@ -1,13 +1,16 @@
 # unko64
 うんこで意思疎通しよう！💩unko64 encoder decoder
 
+https://trimscash.github.io/unko64/
+
+<br>
+
+
 ![thumbnail](https://user-images.githubusercontent.com/42578480/204034367-a6712345-3117-4434-a85d-ad283b846cbd.png)
 
 
+![image](https://github.com/user-attachments/assets/23aa4684-a0d6-48f4-b886-394f4a8137f2)
 
-![image](https://user-images.githubusercontent.com/42578480/204035015-90123992-8dce-4f04-b508-f2b01a80f6d6.png)
-
-https://trimscash.github.io/unko64/
 
 # クソとおねしょと下痢とシッコとくそと穴と馬糞と野糞と糞便と果肉と糞尿と汚物とクソと便所と放屁とコピ・ルアク
 
