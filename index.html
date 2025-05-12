@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+<html lang="ja">
 
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:site" content="@trims_cash">
-		<meta name="twitter:creater" content="@trims_cash">
-		<meta property="og:url" content="https://trimscash.github.io/unko64">
-		<meta property="og:title" content="UNKO64 ENCODER">
-		<meta property="og:description" content="～UNCODER なんつって～">
-		<meta property="og:image" content="https://trimscash.github.io/unko64/thumbnail.png">
-		
-		<meta name="description" content="うんこで意思疎通しよう!UNKO64">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
 
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@trims_cash">
+	<meta name="twitter:creater" content="@trims_cash">
+	<meta property="og:url" content="https://trimscash.github.io/unko64">
+	<meta property="og:title" content="UNKO64 ENCODER">
+	<meta property="og:description" content="～UNCODER なんつって～">
+	<meta property="og:image" content="https://trimscash.github.io/unko64/thumbnail.png">
+	<meta name="description" content="うんこで意思疎通しよう!UNKO64">
 
-		<link rel="icon" type="image/png" href="./unchi.png">
+	<link rel="icon" type="image/png" href="./unchi.png">
+	<link rel="stylesheet" href="./style.css">
+	<script src="./script.js"></script>
+	<title>UNKO64 ENCODER💩</title>
+</head>
 
-		<link href="./style.css" rel="stylesheet" type="text/css">
-		<script src="./script.js"></script>
-		<title>UNKO64 ENCODER💩</title>
-	</head>
-	<body>
-		<div id="header">
-			<div id="title">
-				UNKO64 ENCODER💩
-			</div>
-			～UNCODER なんつって～
+<body class="bg-gray-100 leading-normal tracking-normal">
+	<div id="header" class="bg-yellow-700 text-white text-center py-6">
+		<div id="title" class="text-4xl font-bold">
+			UNKO64 ENCODER💩
 		</div>
-		<div id="body">
-			<h2>Encode</h>
-			<hr>
-			<div id="encode">
-				<textarea id="beforeEncodeText" rows="15" cols="40"></textarea>
-				<button class="exchangeButton" id="encodeButton">Encode></button>
-				<textarea id="afterEncodeText" rows="15" cols="40"></textarea>
-			</div>
-
-			<h2>Decode</h>
-			<hr>
-			<div id="decode">
-				<textarea id="beforeDecodeText" rows="15" cols="40"></textarea>
-				<button class="exchangeButton" id="decodeButton">Decode></button>
-				<textarea id="afterDecodeText" rows="15" cols="40"></textarea>
-			</div>
+		<p class="text-lg mt-2">～UNCODER なんつって～</p>
+	</div>
+	<div id="body" class="max-w-4xl mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
+		<h2 class="text-2xl font-bold text-gray-800 mb-4">Encode</h2>
+		<hr class="border-gray-300 mb-4">
+		<div id="encode" class="space-y-4">
+			<textarea id="beforeEncodeText" rows="5"
+				class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+			<button class="exchangeButton bg-yellow-800 text-white py-2 px-4 w-1/3 rounded-md hover:bg-yellow-900"
+				id="encodeButton">Encode</button>
+			<textarea id="afterEncodeText" rows="5"
+				class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
 		</div>
-	</body>
+
+		<h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Decode</h2>
+		<hr class="border-gray-300 mb-4">
+		<div id="decode" class="space-y-4">
+			<textarea id="beforeDecodeText" rows="5"
+				class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+			<button class="exchangeButton text-white bg-lime-500 py-2 px-4 w-1/3 rounded-md hover:bg-lime-600"
+				id="decodeButton">Decode</button>
+			<textarea id="afterDecodeText" rows="5"
+				class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+		</div>
+	</div>
+</body>
+
 </html>
